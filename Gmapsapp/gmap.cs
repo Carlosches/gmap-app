@@ -30,6 +30,8 @@ namespace Gmapsapp
             InitializeComponent();
             initialLatitude = 35.2270889;
             initialLongitude = -80.843132;
+            dm = new DataManager();
+            dm.loadData();
         }
 
         private void Form1_Load(object sender, EventArgs e)
