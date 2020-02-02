@@ -16,28 +16,128 @@ namespace Gmapsapp
 {
     public partial class Map : Form
     {
+        private GMapOverlay markerOverlay;
+        private GMarkerGoogle marker;
+        private DataTable Dtable;
+
+        private int selectedRow;
+        private double initialLatitude;
+        private double initialLongitude;
+
         public Map()
         {
             /*Iconos diseñados por <a href="https://www.flaticon.es/autores/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>*/
             InitializeComponent();
+            initialLatitude = 35.2270889;
+            initialLongitude = -80.843132;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gmap.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
-            gmap.Position = new GMap.NET.PointLatLng(48.8589507, 2.2775175);
+            Dtable = new DataTable();
+            Dtable.Columns.Add(new DataColumn("Description", typeof(string)));
+            Dtable.Columns.Add(new DataColumn("Latitude", typeof(double)));
+            Dtable.Columns.Add(new DataColumn("Longitude", typeof(double)));
 
-            GMapOverlay markerOver = new GMapOverlay("marcador");
-            GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(48.8589507, 2.2775175), GMarkerGoogleType.green);
-            markerOver.Markers.Add(marker);
+            dataLocations.DataSource = Dtable;
+            // default values of map
+            gmap.DragButton = MouseButtons.Left;
+            gmap.CanDragMap = true;
+            gmap.MapProvider = GMapProviders.GoogleMap;
+            gmap.Position = new PointLatLng(initialLatitude, initialLongitude);
+            gmap.AutoScroll = true;
 
+            // add marker
+            markerOverlay = new GMapOverlay("Marker");
+            marker = new GMarkerGoogle(new PointLatLng(initialLatitude, initialLongitude), GMarkerGoogleType.green);
+            
+            markerOverlay.Markers.Add(marker); //add to map
+
+            // add a tooltip to map
             marker.ToolTipMode = MarkerTooltipMode.Always;
-            marker.ToolTipText = "hola";
-            gmap.Overlays.Add(markerOver);
+            marker.ToolTipText = string.Format("Location: \n Latitude: {0} \n Longitud: {1}", initialLatitude, initialLongitude);
+
+            //add marker to map
+            gmap.Overlays.Add(markerOverlay);
+          
+
+            
+        }
+
+        private void selectLocation(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            txtDescription.Text = dataLocations.Rows[selectedRow].Cells[0].Value.ToString();
+            txtLatitude.Text = dataLocations.Rows[selectedRow].Cells[1].Value.ToString();
+            txtLongitude.Text = dataLocations.Rows[selectedRow].Cells[2].Value.ToString();
+
+            double currentLatitude = Convert.ToDouble(txtLatitude.Text);
+            double currentLongitud = Convert.ToDouble(txtLongitude.Text);
+            //assign values to marker
+            marker.Position = new PointLatLng(currentLatitude, currentLongitud);
+            gmap.Position = marker.Position;
 
         }
 
-      
+        private void doubleClick(PointLatLng pointClick, MouseEventArgs e)
+        {
+            double lat = gmap.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lng = gmap.FromLocalToLatLng(e.X, e.Y).Lng;
+
+            marker.Position = new PointLatLng(lat, lng);
+            txtLatitude.Text = Convert.ToString(lat);
+            txtLongitude.Text = Convert.ToString(lng);
+
+            marker.ToolTipText = string.Format("Location: \n Latitude: {0} \n Longitud: {1}", lat, lng);
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Dtable.Rows.Add(txtDescription.Text, txtLatitude.Text, txtLongitude.Text);
+        }
+
+        private void btnDeleted_Click(object sender, EventArgs e)
+        {
+            Dtable.Rows.RemoveAt(selectedRow);
+        }
+
+        private void btnRoute_Click(object sender, EventArgs e)
+        {
+            GMapOverlay route = new GMapOverlay("layerRoute");
+
+            List<PointLatLng> points = new List<PointLatLng>();
+
+            double lat, lng;
+
+            for(int rows =0; rows<dataLocations.Rows.Count; rows++ )
+            {
+                lat = Convert.ToDouble(dataLocations.Rows[rows].Cells[1].Value);
+                lng = Convert.ToDouble(dataLocations.Rows[rows].Cells[2].Value);
+                points.Add(new PointLatLng(lat, lng));
+            }
+            GMapRoute routePoints = new GMapRoute(points, "Route");
+            route.Routes.Add(routePoints);
+            gmap.Overlays.Add(route);
+
+            // update map
+            gmap.Zoom = gmap.Zoom + 1;
+            gmap.Zoom = gmap.Zoom - 1;
+        }
+
+        private void btnSatelite_Click(object sender, EventArgs e)
+        {
+            gmap.MapProvider = GMapProviders.GoogleChinaSatelliteMap;
+        }
+
+        private void btnNormal_Click(object sender, EventArgs e)
+        {
+            gmap.MapProvider = GMapProviders.GoogleMap ;
+        }
+
+        private void btnRelief_Click(object sender, EventArgs e)
+        {
+            gmap.MapProvider = GMapProviders.GoogleTerrainMap;
+        }
     }
 }
