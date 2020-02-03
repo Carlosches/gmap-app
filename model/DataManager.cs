@@ -9,7 +9,7 @@ namespace model
 {
     public class DataManager
     {
-        private List<FlightReport> flights { get { return flights; } set { flights = value; } };
+        private List<FlightReport> flights;
 
         public void loadData(string path) {
             flights = new List<FlightReport>();
@@ -38,6 +38,11 @@ namespace model
             }
 
             sr.Close();
+        }
+
+        public List<FlightReport> Flights {
+            get { return flights; } 
+            set { flights = value; }
         }
     }
 }
