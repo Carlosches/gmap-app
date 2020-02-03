@@ -9,7 +9,8 @@ namespace model
 {
     public class DataManager
     {
-        private List<FlightReport> flights;
+        private List<FlightReport> flights { get { return flights; } set { flights = value; } };
+
         public void loadData(string path) {
             flights = new List<FlightReport>();
 

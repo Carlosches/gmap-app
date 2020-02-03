@@ -43,7 +43,9 @@
             this.btnSatelite = new System.Windows.Forms.Button();
             this.btnRelief = new System.Windows.Forms.Button();
             this.btnNormal = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gmap
@@ -75,7 +77,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(640, 25);
+            this.txtDescription.Location = new System.Drawing.Point(11, 32);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(240, 20);
             this.txtDescription.TabIndex = 1;
@@ -83,7 +85,7 @@
             // dataLocations
             // 
             this.dataLocations.AllowUserToAddRows = false;
-            this.dataLocations.Location = new System.Drawing.Point(640, 221);
+            this.dataLocations.Location = new System.Drawing.Point(640, 239);
             this.dataLocations.Name = "dataLocations";
             this.dataLocations.ReadOnly = true;
             this.dataLocations.Size = new System.Drawing.Size(240, 173);
@@ -92,14 +94,14 @@
             // 
             // txtLongitude
             // 
-            this.txtLongitude.Location = new System.Drawing.Point(640, 131);
+            this.txtLongitude.Location = new System.Drawing.Point(11, 129);
             this.txtLongitude.Name = "txtLongitude";
             this.txtLongitude.Size = new System.Drawing.Size(240, 20);
             this.txtLongitude.TabIndex = 5;
             // 
             // txtLatitude
             // 
-            this.txtLatitude.Location = new System.Drawing.Point(640, 74);
+            this.txtLatitude.Location = new System.Drawing.Point(11, 80);
             this.txtLatitude.Name = "txtLatitude";
             this.txtLatitude.Size = new System.Drawing.Size(240, 20);
             this.txtLatitude.TabIndex = 6;
@@ -107,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(637, 9);
+            this.label1.Location = new System.Drawing.Point(11, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 7;
@@ -116,7 +118,7 @@
             // labelLongitude
             // 
             this.labelLongitude.AutoSize = true;
-            this.labelLongitude.Location = new System.Drawing.Point(640, 106);
+            this.labelLongitude.Location = new System.Drawing.Point(11, 113);
             this.labelLongitude.Name = "labelLongitude";
             this.labelLongitude.Size = new System.Drawing.Size(54, 13);
             this.labelLongitude.TabIndex = 8;
@@ -125,7 +127,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(640, 48);
+            this.label3.Location = new System.Drawing.Point(11, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 9;
@@ -134,7 +136,7 @@
             // btnRoute
             // 
             this.btnRoute.Image = global::Gmapsapp.Properties.Resources.camino;
-            this.btnRoute.Location = new System.Drawing.Point(712, 400);
+            this.btnRoute.Location = new System.Drawing.Point(717, 418);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.Size = new System.Drawing.Size(83, 50);
             this.btnRoute.TabIndex = 13;
@@ -146,7 +148,7 @@
             // btnDeleted
             // 
             this.btnDeleted.Image = global::Gmapsapp.Properties.Resources.dejar1;
-            this.btnDeleted.Location = new System.Drawing.Point(771, 172);
+            this.btnDeleted.Location = new System.Drawing.Point(774, 190);
             this.btnDeleted.Name = "btnDeleted";
             this.btnDeleted.Size = new System.Drawing.Size(95, 43);
             this.btnDeleted.TabIndex = 11;
@@ -158,7 +160,7 @@
             // btnAdd
             // 
             this.btnAdd.Image = global::Gmapsapp.Properties.Resources.marcador1;
-            this.btnAdd.Location = new System.Drawing.Point(643, 172);
+            this.btnAdd.Location = new System.Drawing.Point(654, 190);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 43);
             this.btnAdd.TabIndex = 10;
@@ -173,7 +175,7 @@
             this.btnSatelite.Name = "btnSatelite";
             this.btnSatelite.Size = new System.Drawing.Size(75, 23);
             this.btnSatelite.TabIndex = 15;
-            this.btnSatelite.Text = "satelite";
+            this.btnSatelite.Text = "Satelite";
             this.btnSatelite.UseVisualStyleBackColor = true;
             this.btnSatelite.Click += new System.EventHandler(this.btnSatelite_Click);
             // 
@@ -183,7 +185,7 @@
             this.btnRelief.Name = "btnRelief";
             this.btnRelief.Size = new System.Drawing.Size(75, 23);
             this.btnRelief.TabIndex = 16;
-            this.btnRelief.Text = "relief";
+            this.btnRelief.Text = "Relieve";
             this.btnRelief.UseVisualStyleBackColor = true;
             this.btnRelief.Click += new System.EventHandler(this.btnRelief_Click);
             // 
@@ -197,6 +199,20 @@
             this.btnNormal.UseVisualStyleBackColor = true;
             this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtLongitude);
+            this.groupBox1.Controls.Add(this.labelLongitude);
+            this.groupBox1.Controls.Add(this.txtLatitude);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(623, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(260, 170);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,22 +224,18 @@
             this.Controls.Add(this.btnRoute);
             this.Controls.Add(this.btnDeleted);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelLongitude);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLatitude);
-            this.Controls.Add(this.txtLongitude);
             this.Controls.Add(this.dataLocations);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.gmap);
+            this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Map";
             this.Text = "Maps";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -243,6 +255,7 @@
         private System.Windows.Forms.Button btnSatelite;
         private System.Windows.Forms.Button btnRelief;
         private System.Windows.Forms.Button btnNormal;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
