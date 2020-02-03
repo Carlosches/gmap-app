@@ -118,6 +118,12 @@
   <ItemGroup>
     <None Include="Resources\camino.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{f045cdaf-49b6-4fb4-a823-b4b1e6e82d10}</Project>
+      <Name>model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

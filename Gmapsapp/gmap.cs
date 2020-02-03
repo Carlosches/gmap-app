@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using model;
+
 
 namespace Gmapsapp
 {
@@ -23,6 +26,7 @@ namespace Gmapsapp
         private int selectedRow;
         private double initialLatitude;
         private double initialLongitude;
+        private DataManager dm;
 
         public Map()
         {
@@ -30,8 +34,21 @@ namespace Gmapsapp
             InitializeComponent();
             initialLatitude = 35.2270889;
             initialLongitude = -80.843132;
+            OpenFileDialog fd = new OpenFileDialog();
+            
+            fd.ShowDialog();
+            string path = fd.FileName;
+            /*System.IO.StreamReader sr = new StreamReader(path);
+
+            string line = sr.ReadLine();
+            string[] lines = sr.ReadLine().Split(',');
+            string msg = "";
+            for (int i = 0; i < lines.Length; i++) {
+                msg += i + " --> " + lines[i] + "\n";
+            }*/
+
             dm = new DataManager();
-            dm.loadData();
+            dm.loadData(path);
         }
 
         private void Form1_Load(object sender, EventArgs e)

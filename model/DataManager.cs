@@ -9,12 +9,11 @@ namespace model
 {
     public class DataManager
     {
-        public const string PATH = "..\\Gmapsapp\\Resources\\On_Time_On_Time_Performance_2017_1.csv";
         private List<FlightReport> flights;
-        public void loadData() {
+        public void loadData(string path) {
             flights = new List<FlightReport>();
 
-            StreamReader sr = new StreamReader("D:\\OneDrive\\OneDrive - Universidad Icesi\\Icesi\\Quinto semestre\\integrador\\Trabajos\\On_Time_On_Time_Performance_2017_1.csv");
+            StreamReader sr = new StreamReader(path);
 
             string line = sr.ReadLine(); //skip header
             while ((line = sr.ReadLine()) != null)
@@ -24,22 +23,15 @@ namespace model
                 string airlineID = args[7].Replace("\"", "");
                 string originAirportID = args[11].Replace("\"", "");
                 string originCity = args[15].Replace("\"", "");
-                string originState = args[18].Replace("\"", "");
-                string destAirportID = args[20].Replace("\"", "");
-                string destCity = args[24].Replace("\"", "");
-                string destState = args[27].Replace("\"", "");
-                int apntdDep = 1;
-                int actDep = 2;
-                int depDelay = 3;
-                try
-                {
-                    apntdDep = Convert.ToInt32(args[29].Replace("\"", "")); ;
-                    actDep = Convert.ToInt32(args[30].Replace("\"", ""));
-                    depDelay = Convert.ToInt32(args[31].Replace("\"", ""));
-                }
-                catch (Exception) { 
-                    
-                }
+                string originState = args[19].Replace("\"", "");
+                string destAirportID = args[21].Replace("\"", "");
+                string destCity = args[25].Replace("\"", "");
+                string destState = args[29].Replace("\"", "");
+                int apntdDep = Convert.ToInt32(args[31].Replace("\"", ""));
+                string rrr = args[32].Substring(1);
+                rrr = rrr.Substring(0, rrr.Length - 1);
+                int actDep = Convert.ToInt32(rrr.Length == 0 ? "0" : rrr);
+                int depDelay = actDep-apntdDep;
 
                 flights.Add(new FlightReport(airlineID, originAirportID, originCity, originState, destAirportID, destCity, destState, apntdDep, actDep, depDelay));
             }
