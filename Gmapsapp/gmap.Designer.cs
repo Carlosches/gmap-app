@@ -53,15 +53,17 @@
             this.minutesScroll = new System.Windows.Forms.TrackBar();
             this.txtScroll = new System.Windows.Forms.Label();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label6 = new System.Windows.Forms.Label();
+            this.minutesScroll2 = new System.Windows.Forms.TrackBar();
+            this.txtScroll2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelDelay = new System.Windows.Forms.Label();
+            this.labelEarly = new System.Windows.Forms.Label();
+            this.labelDel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minutesScroll)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesScroll2)).BeginInit();
             this.SuspendLayout();
             // 
             // gmap
@@ -237,7 +239,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Calculate probability";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.probability5);
+            this.button1.Click += new System.EventHandler(this.btnCalculateDelay);
             // 
             // label2
             // 
@@ -265,9 +267,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(667, 510);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 29);
+            this.label5.Size = new System.Drawing.Size(67, 29);
             this.label5.TabIndex = 22;
-            this.label5.Text = "Advanced";
+            this.label5.Text = "Early";
             // 
             // label7
             // 
@@ -304,32 +306,26 @@
             this.sqLiteCommandBuilder1.DataAdapter = null;
             this.sqLiteCommandBuilder1.QuoteSuffix = "]";
             // 
-            // textBox1
+            // minutesScroll2
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 655);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 28;
+            this.minutesScroll2.Location = new System.Drawing.Point(490, 564);
+            this.minutesScroll2.Maximum = 100;
+            this.minutesScroll2.Name = "minutesScroll2";
+            this.minutesScroll2.Size = new System.Drawing.Size(445, 45);
+            this.minutesScroll2.TabIndex = 29;
+            this.minutesScroll2.TickFrequency = 5;
+            this.minutesScroll2.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
             // 
-            // trackBar1
+            // txtScroll2
             // 
-            this.trackBar1.Location = new System.Drawing.Point(490, 564);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(445, 45);
-            this.trackBar1.TabIndex = 29;
-            this.trackBar1.TickFrequency = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(692, 612);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 24);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "0";
+            this.txtScroll2.AutoSize = true;
+            this.txtScroll2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtScroll2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtScroll2.Location = new System.Drawing.Point(692, 612);
+            this.txtScroll2.Name = "txtScroll2";
+            this.txtScroll2.Size = new System.Drawing.Size(21, 24);
+            this.txtScroll2.TabIndex = 30;
+            this.txtScroll2.Text = "0";
             // 
             // button2
             // 
@@ -339,24 +335,56 @@
             this.button2.TabIndex = 31;
             this.button2.Text = "Calculate probability";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnCalculateEarly);
             // 
-            // textBox2
+            // label8
             // 
-            this.textBox2.Location = new System.Drawing.Point(711, 654);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 32;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(644, 548);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "maximum minute early";
+            // 
+            // labelDelay
+            // 
+            this.labelDelay.Location = new System.Drawing.Point(0, 0);
+            this.labelDelay.Name = "labelDelay";
+            this.labelDelay.Size = new System.Drawing.Size(100, 23);
+            this.labelDelay.TabIndex = 36;
+            // 
+            // labelEarly
+            // 
+            this.labelEarly.AutoSize = true;
+            this.labelEarly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEarly.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelEarly.Location = new System.Drawing.Point(692, 653);
+            this.labelEarly.Name = "labelEarly";
+            this.labelEarly.Size = new System.Drawing.Size(0, 24);
+            this.labelEarly.TabIndex = 35;
+            // 
+            // labelDel
+            // 
+            this.labelDel.AutoSize = true;
+            this.labelDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelDel.Location = new System.Drawing.Point(222, 652);
+            this.labelDel.Name = "labelDel";
+            this.labelDel.Size = new System.Drawing.Size(0, 24);
+            this.labelDel.TabIndex = 37;
             // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 749);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.labelDel);
+            this.Controls.Add(this.labelEarly);
+            this.Controls.Add(this.labelDelay);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtScroll2);
+            this.Controls.Add(this.minutesScroll2);
             this.Controls.Add(this.txtScroll);
             this.Controls.Add(this.minutesScroll);
             this.Controls.Add(this.label7);
@@ -382,7 +410,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minutesScroll)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesScroll2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,11 +442,13 @@
         private System.Windows.Forms.TrackBar minutesScroll;
         private System.Windows.Forms.Label txtScroll;
         private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar minutesScroll2;
+        private System.Windows.Forms.Label txtScroll2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelDelay;
+        private System.Windows.Forms.Label labelEarly;
+        private System.Windows.Forms.Label labelDel;
     }
 }
 

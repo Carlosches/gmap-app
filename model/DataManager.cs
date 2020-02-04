@@ -65,7 +65,14 @@ namespace model
                 {
                     total++;
                     Console.WriteLine("depDelay: " + flreport.DepDelay);
-                    if(flreport.DepDelay<=minutes && flreport.DepDelay > 0)
+                    if (minutes == 0 && flreport.DepDelay==0)
+                    {
+                        have++;
+                    }else if(minutes<0 && flreport.DepDelay <= minutes)
+                    {
+                        have++;
+                    }
+                   else if(flreport.DepDelay<=minutes && flreport.DepDelay > 0)
                     {
                         have++;
                     }
@@ -77,6 +84,8 @@ namespace model
                 Console.WriteLine("total : " + total  + " proba: "+ proba);
             return proba;
         }
+
+        
 
         public List<FlightReport> Flights {
             get { return flights; } 

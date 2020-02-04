@@ -158,19 +158,41 @@ namespace Gmapsapp
             gmap.MapProvider = GMapProviders.GoogleTerrainMap;
         }
 
-        private void probability5(object sender, EventArgs e)
-        {
-           txtDescription.Text= Convert.ToString(dm.probability("Charlotte","Austin",5));
-        }
+       
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             txtScroll.Text = minutesScroll.Value.ToString();
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
         {
-
+            txtScroll2.Text = minutesScroll2.Value.ToString();
         }
+
+        private void btnCalculateDelay(object sender, EventArgs e)
+        {
+            if (dataLocations.Rows.Count == 2)
+            {
+                
+                    string origin = dataLocations.Rows[0].Cells[0].Value.ToString();
+                    string dest = dataLocations.Rows[1].Cells[0].Value.ToString();
+                 int minutes = Convert.ToInt32(txtScroll.Text);
+                labelDel.Text = Convert.ToString(dm.probability(origin, dest, minutes));
+            }
+        }
+
+        private void btnCalculateEarly(object sender, EventArgs e)
+        {
+            if (dataLocations.Rows.Count == 2)
+            {
+
+                string origin = dataLocations.Rows[0].Cells[0].Value.ToString();
+                string dest = dataLocations.Rows[1].Cells[0].Value.ToString();
+                int minutes = Convert.ToInt32(txtScroll2.Text);
+                labelEarly.Text = Convert.ToString(dm.probability(origin, dest, minutes*(-1)));
+            }
+        }
+
+       
     }
 }
