@@ -47,3 +47,29 @@ D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabaj
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.xml
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.dll.config
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\Gmapsapp\obj\Debug\ui.csproj.CopyComplete
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\Gmapsapp.exe.config
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\Gmapsapp.exe
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\Gmapsapp.pdb
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\EntityFramework.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\GMap.NET.Core.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\model.exe
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\model.pdb
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\model.exe.config
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\EntityFramework.xml
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.xml
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\ui.csprojAssemblyReference.cache
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\Gmapsapp.Map.resources
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\Gmapsapp.Properties.Resources.resources
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\ui.csproj.GenerateResource.cache
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\ui.csproj.CopyComplete
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\Gmapsapp.exe
+C:\Users\Carlos Andrés\source\repos\gmap-app\Gmapsapp\obj\Debug\Gmapsapp.pdb

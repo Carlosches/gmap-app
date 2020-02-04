@@ -4,3 +4,9 @@ D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabaj
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\model\obj\Debug\model.csprojAssemblyReference.cache
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\model\obj\Debug\model.exe
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\gmap-app\model\obj\Debug\model.pdb
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\bin\Debug\model.exe.config
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\bin\Debug\model.exe
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\bin\Debug\model.pdb
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\obj\Debug\model.csprojAssemblyReference.cache
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\obj\Debug\model.exe
+C:\Users\Carlos Andrés\source\repos\gmap-app\model\obj\Debug\model.pdb

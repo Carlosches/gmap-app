@@ -78,9 +78,9 @@ namespace model
             set { actDep = value; }
         }
 
-        public int depDelay {
+        public int DepDelay
+        {
             get { return depDelay; }
-            set { depDelay = value; }
         }
     }
 }

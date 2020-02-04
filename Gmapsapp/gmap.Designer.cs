@@ -44,8 +44,24 @@
             this.btnRelief = new System.Windows.Forms.Button();
             this.btnNormal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.minutesScroll = new System.Windows.Forms.TrackBar();
+            this.txtScroll = new System.Windows.Forms.Label();
+            this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesScroll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // gmap
@@ -70,7 +86,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(585, 426);
+            this.gmap.Size = new System.Drawing.Size(627, 426);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 9D;
             this.gmap.OnMapDoubleClick += new GMap.NET.WindowsForms.MapDoubleClick(this.doubleClick);
@@ -85,7 +101,7 @@
             // dataLocations
             // 
             this.dataLocations.AllowUserToAddRows = false;
-            this.dataLocations.Location = new System.Drawing.Point(640, 239);
+            this.dataLocations.Location = new System.Drawing.Point(692, 239);
             this.dataLocations.Name = "dataLocations";
             this.dataLocations.ReadOnly = true;
             this.dataLocations.Size = new System.Drawing.Size(240, 173);
@@ -136,7 +152,7 @@
             // btnRoute
             // 
             this.btnRoute.Image = global::Gmapsapp.Properties.Resources.camino;
-            this.btnRoute.Location = new System.Drawing.Point(717, 418);
+            this.btnRoute.Location = new System.Drawing.Point(774, 418);
             this.btnRoute.Name = "btnRoute";
             this.btnRoute.Size = new System.Drawing.Size(83, 50);
             this.btnRoute.TabIndex = 13;
@@ -148,7 +164,7 @@
             // btnDeleted
             // 
             this.btnDeleted.Image = global::Gmapsapp.Properties.Resources.dejar1;
-            this.btnDeleted.Location = new System.Drawing.Point(774, 190);
+            this.btnDeleted.Location = new System.Drawing.Point(828, 190);
             this.btnDeleted.Name = "btnDeleted";
             this.btnDeleted.Size = new System.Drawing.Size(95, 43);
             this.btnDeleted.TabIndex = 11;
@@ -160,7 +176,7 @@
             // btnAdd
             // 
             this.btnAdd.Image = global::Gmapsapp.Properties.Resources.marcador1;
-            this.btnAdd.Location = new System.Drawing.Point(654, 190);
+            this.btnAdd.Location = new System.Drawing.Point(696, 190);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 43);
             this.btnAdd.TabIndex = 10;
@@ -207,17 +223,147 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(623, 12);
+            this.groupBox1.Location = new System.Drawing.Point(672, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 170);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(76, 652);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Calculate probability";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.probability5);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(385, 488);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 31);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Probability";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(200, 510);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 29);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Delay";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(667, 510);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 29);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Advanced";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(177, 548);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(112, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "maximum minute delay";
+            // 
+            // minutesScroll
+            // 
+            this.minutesScroll.Location = new System.Drawing.Point(21, 564);
+            this.minutesScroll.Maximum = 100;
+            this.minutesScroll.Name = "minutesScroll";
+            this.minutesScroll.Size = new System.Drawing.Size(445, 45);
+            this.minutesScroll.TabIndex = 26;
+            this.minutesScroll.TickFrequency = 5;
+            this.minutesScroll.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // txtScroll
+            // 
+            this.txtScroll.AutoSize = true;
+            this.txtScroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtScroll.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtScroll.Location = new System.Drawing.Point(210, 612);
+            this.txtScroll.Name = "txtScroll";
+            this.txtScroll.Size = new System.Drawing.Size(21, 24);
+            this.txtScroll.TabIndex = 27;
+            this.txtScroll.Text = "0";
+            // 
+            // sqLiteCommandBuilder1
+            // 
+            this.sqLiteCommandBuilder1.DataAdapter = null;
+            this.sqLiteCommandBuilder1.QuoteSuffix = "]";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(226, 655);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 20);
+            this.textBox1.TabIndex = 28;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(490, 564);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(445, 45);
+            this.trackBar1.TabIndex = 29;
+            this.trackBar1.TickFrequency = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(692, 612);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 24);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "0";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(534, 654);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Calculate probability";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(711, 654);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(146, 20);
+            this.textBox2.TabIndex = 32;
+            // 
             // Map
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 499);
+            this.ClientSize = new System.Drawing.Size(944, 749);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtScroll);
+            this.Controls.Add(this.minutesScroll);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNormal);
             this.Controls.Add(this.btnRelief);
             this.Controls.Add(this.btnSatelite);
@@ -235,7 +381,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesScroll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -256,6 +405,20 @@
         private System.Windows.Forms.Button btnRelief;
         private System.Windows.Forms.Button btnNormal;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar minutesScroll;
+        private System.Windows.Forms.Label txtScroll;
+        private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 

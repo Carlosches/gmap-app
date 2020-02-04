@@ -14,7 +14,6 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using model;
 
-
 namespace Gmapsapp
 {
     public partial class Map : Form
@@ -157,6 +156,21 @@ namespace Gmapsapp
         private void btnRelief_Click(object sender, EventArgs e)
         {
             gmap.MapProvider = GMapProviders.GoogleTerrainMap;
+        }
+
+        private void probability5(object sender, EventArgs e)
+        {
+           txtDescription.Text= Convert.ToString(dm.probability("Charlotte","Austin",5));
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            txtScroll.Text = minutesScroll.Value.ToString();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
