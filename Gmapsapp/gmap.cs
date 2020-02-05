@@ -177,7 +177,14 @@ namespace Gmapsapp
                     string origin = dataLocations.Rows[0].Cells[0].Value.ToString();
                     string dest = dataLocations.Rows[1].Cells[0].Value.ToString();
                  int minutes = Convert.ToInt32(txtScroll.Text);
-                labelDel.Text = Convert.ToString(dm.probability(origin, dest, minutes));
+                labelDel.Text = Convert.ToString(dm.probability(origin, dest, minutes))+" %";
+            }
+            else
+            {
+                labelDel.Text = "";
+
+                labelEarly.Text = "";
+                MessageBox.Show("It is only possible to calculate the probability of a flight, please make sure you have selected only two cities");
             }
         }
 
@@ -189,7 +196,13 @@ namespace Gmapsapp
                 string origin = dataLocations.Rows[0].Cells[0].Value.ToString();
                 string dest = dataLocations.Rows[1].Cells[0].Value.ToString();
                 int minutes = Convert.ToInt32(txtScroll2.Text);
-                labelEarly.Text = Convert.ToString(dm.probability(origin, dest, minutes*(-1)));
+                labelEarly.Text = Convert.ToString(dm.probability(origin, dest, minutes*(-1)))+" %";
+            }
+            else
+            {
+                labelEarly.Text = "";
+                labelDel.Text = "";
+              MessageBox.Show("It is only possible to calculate the probability of a flight, please make sure you have selected only two cities");
             }
         }
 

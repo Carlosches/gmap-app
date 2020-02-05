@@ -37,10 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelLongitude = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRoute = new System.Windows.Forms.Button();
-            this.btnDeleted = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSatelite = new System.Windows.Forms.Button();
             this.btnRelief = new System.Windows.Forms.Button();
             this.btnNormal = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -60,6 +56,10 @@
             this.labelDelay = new System.Windows.Forms.Label();
             this.labelEarly = new System.Windows.Forms.Label();
             this.labelDel = new System.Windows.Forms.Label();
+            this.btnSatelite = new System.Windows.Forms.Button();
+            this.btnRoute = new System.Windows.Forms.Button();
+            this.btnDeleted = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataLocations)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minutesScroll)).BeginInit();
@@ -151,69 +151,27 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Latitude";
             // 
-            // btnRoute
-            // 
-            this.btnRoute.Image = global::Gmapsapp.Properties.Resources.camino;
-            this.btnRoute.Location = new System.Drawing.Point(774, 418);
-            this.btnRoute.Name = "btnRoute";
-            this.btnRoute.Size = new System.Drawing.Size(83, 50);
-            this.btnRoute.TabIndex = 13;
-            this.btnRoute.Text = "Route";
-            this.btnRoute.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRoute.UseVisualStyleBackColor = true;
-            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
-            // 
-            // btnDeleted
-            // 
-            this.btnDeleted.Image = global::Gmapsapp.Properties.Resources.dejar1;
-            this.btnDeleted.Location = new System.Drawing.Point(828, 190);
-            this.btnDeleted.Name = "btnDeleted";
-            this.btnDeleted.Size = new System.Drawing.Size(95, 43);
-            this.btnDeleted.TabIndex = 11;
-            this.btnDeleted.Text = "Deleted";
-            this.btnDeleted.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeleted.UseVisualStyleBackColor = true;
-            this.btnDeleted.Click += new System.EventHandler(this.btnDeleted_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = global::Gmapsapp.Properties.Resources.marcador1;
-            this.btnAdd.Location = new System.Drawing.Point(696, 190);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(83, 43);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSatelite
-            // 
-            this.btnSatelite.Location = new System.Drawing.Point(106, 445);
-            this.btnSatelite.Name = "btnSatelite";
-            this.btnSatelite.Size = new System.Drawing.Size(75, 23);
-            this.btnSatelite.TabIndex = 15;
-            this.btnSatelite.Text = "Satelite";
-            this.btnSatelite.UseVisualStyleBackColor = true;
-            this.btnSatelite.Click += new System.EventHandler(this.btnSatelite_Click);
-            // 
             // btnRelief
             // 
-            this.btnRelief.Location = new System.Drawing.Point(315, 444);
+            this.btnRelief.Image = global::Gmapsapp.Properties.Resources.mapa;
+            this.btnRelief.Location = new System.Drawing.Point(325, 445);
             this.btnRelief.Name = "btnRelief";
-            this.btnRelief.Size = new System.Drawing.Size(75, 23);
+            this.btnRelief.Size = new System.Drawing.Size(83, 40);
             this.btnRelief.TabIndex = 16;
-            this.btnRelief.Text = "Relieve";
+            this.btnRelief.Text = "Relief";
+            this.btnRelief.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRelief.UseVisualStyleBackColor = true;
             this.btnRelief.Click += new System.EventHandler(this.btnRelief_Click);
             // 
             // btnNormal
             // 
+            this.btnNormal.Image = global::Gmapsapp.Properties.Resources.mapas_y_ubicacion;
             this.btnNormal.Location = new System.Drawing.Point(214, 444);
             this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(75, 23);
+            this.btnNormal.Size = new System.Drawing.Size(95, 46);
             this.btnNormal.TabIndex = 17;
             this.btnNormal.Text = "Normal";
+            this.btnNormal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNormal.UseVisualStyleBackColor = true;
             this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
             // 
@@ -233,11 +191,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 652);
+            this.button1.Image = global::Gmapsapp.Properties.Resources.calculadora;
+            this.button1.Location = new System.Drawing.Point(48, 633);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(142, 44);
             this.button1.TabIndex = 19;
             this.button1.Text = "Calculate probability";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnCalculateDelay);
             // 
@@ -295,7 +255,7 @@
             this.txtScroll.AutoSize = true;
             this.txtScroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScroll.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txtScroll.Location = new System.Drawing.Point(210, 612);
+            this.txtScroll.Location = new System.Drawing.Point(210, 600);
             this.txtScroll.Name = "txtScroll";
             this.txtScroll.Size = new System.Drawing.Size(21, 24);
             this.txtScroll.TabIndex = 27;
@@ -321,7 +281,7 @@
             this.txtScroll2.AutoSize = true;
             this.txtScroll2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScroll2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txtScroll2.Location = new System.Drawing.Point(692, 612);
+            this.txtScroll2.Location = new System.Drawing.Point(692, 600);
             this.txtScroll2.Name = "txtScroll2";
             this.txtScroll2.Size = new System.Drawing.Size(21, 24);
             this.txtScroll2.TabIndex = 30;
@@ -329,11 +289,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(534, 654);
+            this.button2.Image = global::Gmapsapp.Properties.Resources.calculadora;
+            this.button2.Location = new System.Drawing.Point(505, 634);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.Size = new System.Drawing.Size(143, 43);
             this.button2.TabIndex = 31;
             this.button2.Text = "Calculate probability";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnCalculateEarly);
             // 
@@ -372,6 +334,54 @@
             this.labelDel.Name = "labelDel";
             this.labelDel.Size = new System.Drawing.Size(0, 24);
             this.labelDel.TabIndex = 37;
+            // 
+            // btnSatelite
+            // 
+            this.btnSatelite.Image = global::Gmapsapp.Properties.Resources.satelite;
+            this.btnSatelite.Location = new System.Drawing.Point(106, 445);
+            this.btnSatelite.Name = "btnSatelite";
+            this.btnSatelite.Size = new System.Drawing.Size(84, 45);
+            this.btnSatelite.TabIndex = 15;
+            this.btnSatelite.Text = "Satelite";
+            this.btnSatelite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSatelite.UseVisualStyleBackColor = true;
+            this.btnSatelite.Click += new System.EventHandler(this.btnSatelite_Click);
+            // 
+            // btnRoute
+            // 
+            this.btnRoute.Image = global::Gmapsapp.Properties.Resources.camino;
+            this.btnRoute.Location = new System.Drawing.Point(774, 418);
+            this.btnRoute.Name = "btnRoute";
+            this.btnRoute.Size = new System.Drawing.Size(83, 50);
+            this.btnRoute.TabIndex = 13;
+            this.btnRoute.Text = "Route";
+            this.btnRoute.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRoute.UseVisualStyleBackColor = true;
+            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
+            // 
+            // btnDeleted
+            // 
+            this.btnDeleted.Image = global::Gmapsapp.Properties.Resources.dejar1;
+            this.btnDeleted.Location = new System.Drawing.Point(828, 190);
+            this.btnDeleted.Name = "btnDeleted";
+            this.btnDeleted.Size = new System.Drawing.Size(95, 43);
+            this.btnDeleted.TabIndex = 11;
+            this.btnDeleted.Text = "Deleted";
+            this.btnDeleted.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleted.UseVisualStyleBackColor = true;
+            this.btnDeleted.Click += new System.EventHandler(this.btnDeleted_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = global::Gmapsapp.Properties.Resources.marcador1;
+            this.btnAdd.Location = new System.Drawing.Point(696, 190);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(83, 43);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Map
             // 

@@ -20,7 +20,6 @@ namespace model
             StreamReader sr = new StreamReader(path);
 
             string line = sr.ReadLine(); //skip header
-            int p = 0;
             while ((line = sr.ReadLine()) != null)
             {
                 string[] args = line.Split(',');
@@ -38,11 +37,7 @@ namespace model
                 rrr = rrr.Substring(0, rrr.Length - 1);
                 int actDep = Convert.ToInt32(rrr.Length == 0 ? "0" : rrr);
                 int depDelay = actDep-apntdDep;
-                if (p<10)
-                {
-                   // Console.WriteLine(depDelay);
-                    p++;
-                }
+              
                 flights.Add(new FlightReport(airlineID, originAirportID, originCity, originState, destAirportID, destCity, destState, apntdDep, actDep, depDelay));
             }
            
@@ -64,7 +59,6 @@ namespace model
                 if (originCity.Equals(origin) && destCity.Equals(dest))
                 {
                     total++;
-                    Console.WriteLine("depDelay: " + flreport.DepDelay);
                     if (minutes == 0 && flreport.DepDelay==0)
                     {
                         have++;
@@ -81,7 +75,6 @@ namespace model
             }
             proba = (have / total)*100;
             proba = Math.Round(proba, 2);
-                Console.WriteLine("total : " + total  + " proba: "+ proba);
             return proba;
         }
 
